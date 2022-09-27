@@ -292,6 +292,9 @@ form {
   cursor: pointer;
   font-size: 20px;
 }
+#btnRegBack:hover {
+  filter: drop-shadow(0 0 10px #0079c4);
+}
 
 .button:hover {
   background: #888380;
