@@ -45,28 +45,26 @@ $(document).ready(function () {
       heroLevel.append(userDataHero.hero_level);
 
       if (freePoints > 0) {
-        heroFreePoints.style.display = "block";
         strPlus.style.display = "block";
         agiPlus.style.display = "block";
         intPlus.style.display = "block";
-        heroFreePoints.append(freePoints);
+        heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
 
         strPlus.onclick = function () {
           if (freePoints > 0) {
             currentStr++;
             freePoints--;
-            if (freePoints == 0) {
-              heroFreePoints.style.display = "none";
-              strPlus.style.display = "none";
-              agiPlus.style.display = "none";
-              intPlus.style.display = "none";
-            }
             $.ajax({
               url: "php/updateHeroStats.php",
               type: "POST",
               data: { currentStr, freePoints },
               success: function (response) {
-                heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
+                if (freePoints == 0) {
+                  heroFreePoints.innerHTML = `Характеристики  <br> персонажа: <br> &#9660;`;
+                  strPlus.style.display = "none";
+                  agiPlus.style.display = "none";
+                  intPlus.style.display = "none";
+                } else heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
                 userStr.innerHTML = `Сила: ${currentStr}`;
               },
             });
@@ -77,18 +75,17 @@ $(document).ready(function () {
           if (freePoints > 0) {
             currentAgi++;
             freePoints--;
-            if (freePoints == 0) {
-              heroFreePoints.style.display = "none";
-              strPlus.style.display = "none";
-              agiPlus.style.display = "none";
-              intPlus.style.display = "none";
-            }
             $.ajax({
               url: "php/updateHeroStats.php",
               type: "POST",
               data: { currentAgi, freePoints },
               success: function (response) {
-                heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
+                if (freePoints == 0) {
+                  heroFreePoints.innerHTML = `Характеристики  <br> персонажа: <br> &#9660;`;
+                  strPlus.style.display = "none";
+                  agiPlus.style.display = "none";
+                  intPlus.style.display = "none";
+                } else heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
                 userAgi.innerHTML = `Ловкость: ${currentAgi}`;
               },
             });
@@ -99,25 +96,24 @@ $(document).ready(function () {
           if (freePoints > 0) {
             currentInt++;
             freePoints--;
-            if (freePoints == 0) {
-              heroFreePoints.style.display = "none";
-              strPlus.style.display = "none";
-              agiPlus.style.display = "none";
-              intPlus.style.display = "none";
-            }
             $.ajax({
               url: "php/updateHeroStats.php",
               type: "POST",
               data: { currentInt, freePoints },
               success: function (response) {
-                heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
+                if (freePoints == 0) {
+                  heroFreePoints.innerHTML = `Характеристики  <br> персонажа: <br> &#9660;`;
+                  strPlus.style.display = "none";
+                  agiPlus.style.display = "none";
+                  intPlus.style.display = "none";
+                } else heroFreePoints.innerHTML = `Свободные очки характеристик: ${freePoints}`;
                 userInt.innerHTML = `Интеллект: ${currentInt}`;
               },
             });
           }
         };
       } else {
-        heroFreePoints.style.display = "none";
+        heroFreePoints.innerHTML = `Характеристики  <br> персонажа: <br>	&#9660;`;
         strPlus.style.display = "none";
         agiPlus.style.display = "none";
         intPlus.style.display = "none";

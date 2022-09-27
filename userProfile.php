@@ -25,24 +25,24 @@ else :
                 <div class="row">
                     <h2 class="col-s-10 col-md-8 m-auto" id="welcomeText">Добро пожаловать,<br> </h2>
                     <div class="col-s-2 col-md-4 m-auto">
-                        <div id="btnLogout" class="links">Выйти из аккаунта</div>
+                        <div id="btnLogout" class="links mt-3 mt-md-0">Выйти из аккаунта</div>
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-4 p-0">
+                    <div class="col-4 m-auto p-0">
                         <div id="heroClass">Ваш персонаж:<br></div>
                         <div id="heroName"></div>
                         <img id="heroPortrait"></img>
                         <div class="mt-2" id="heroLevel">Уровень: </div>
                     </div>
                     <div class="col-5 m-auto p-0">
-                        <div class="row justify-content-start no-gutters">
-                            <div id="heroFreePoints">Свободные очки характеристик: </div>
+                        <div class="row justify-content-center no-gutters">
+                            <div id="heroFreePoints"></div>
                         </div>
-                        <div class="row justify-content-around no-gutters">
+                        <div class="row justify-content-center no-gutters">
                             <!-- <div id=strengthMinus class="col col-sm-1 p-0"><img class="setAttr" src="images/icons/attrminus.jpg"></div> -->
                             <div id="userStr" class="col p-0">Сила: </div>
-                            <div id="strPlus" class="col mx-auto p-0"><img class="setAttr" src="images/icons/attrplus.jpg"></div>
+                            <div id="strPlus" class="col p-0"><img class="setAttr" src="images/icons/attrplus.jpg"></div>
                         </div>
                         <div class="row justify-content-center no-gutters">
                             <!-- <div id=agilityMinus class="col col-sm-1 p-0"><img class="setAttr" src="images/icons/attrminus.jpg"></div> -->
@@ -59,8 +59,8 @@ else :
                         <div id="btnCreateHero" class="links">Создать нового персонажа</div>
                     </div>
                 </div>
-                <div class="row mt-5 col-xs col-md-4 m-auto">
-                    <div id="btnStartGame" class="links">Начать игру</div>
+                <div class="row col-xs col-md-4 m-auto">
+                    <div id="btnStartGame" class="links mt-5">Начать игру</div>
                 </div>
             </div>
         </div>
